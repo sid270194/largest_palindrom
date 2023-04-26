@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function largestPalindrome(s) {
+    let largest_palindrome = "";
+    let allpalindrom = "";
+    for (let i = 0; i < s.length; i++) {
+      for (let j = i + 1; j <= s.length; j++) {
+        let substr = s.substring(i, j);
+
+        if (substr === substr.split("").reverse().join("")) {
+          allpalindrom = allpalindrom + substr;
+          if (substr.length > largest_palindrome.length) {
+            largest_palindrome = substr;
+          }
+        }
+      }
+    }
+    console.log(largest_palindrome);
+    console.log(allpalindrom);
+  }
+
+  var str1 = "Hello Mam, how are you. Madam, do you know racecar";
+  largestPalindrome(str1);
+</script>
